@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body style="background-color:#222020">
+        <div class="logo">
+            <img src="googlelogo.png"></img>
+        </div>
+        <form id="search-form" action="https://google.com/search">
+        <div>
+            <div class="search-bar-container">
+                <input type="text" name="q" class="search-bar">
+            </div>
+            <div class="search-button-container">
+                <input type="submit" value="Google Search" class="search-button">
+                <input type="submit" value="I'm Feeling Lucky" class="lucky-button" id="luckyButton">
+            </div>
+        </div>          
+        </form>
+        <form action="image.html">
+             <input type="submit" value="Search for images" class="image-button">
+        </form>
+        <form action="advanced.html">
+            <input type="submit" value="Advanced Search" class="advanced-button">
+        </form>
+        <script> 
+         document.getElementById('search-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const query = document.querySelector('.search-bar').value.trim();
+            if (query) {
+              window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}&btnI=1`;
+            }
+          });
+      
+          document.getElementById('lucky-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            const query = document.querySelector('.search-bar').value.trim();
+            if (query) {
+              window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}&btnI=1`;
+            }
+          });</script>
+    </body>
+</html>
+        
